@@ -1,0 +1,9 @@
+#!/bin/bash
+
+docker run -it --rm \
+    -v $HOME/Workspace:$HOME/Workspace \
+    -v $HOME/Apps/go:$HOME/Apps/go \
+    -e GOPATH=$HOME/Workspace/Go \
+    -e GOPRIVATE=github.com/daneshvar/* \
+    -e PKG_CONFIG_PATH=$HOME/Workspace/C/config \
+    go-ubuntu20 $PWD "$@"
